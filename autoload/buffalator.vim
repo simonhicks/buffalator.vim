@@ -24,9 +24,14 @@ function! s:BufferList(pattern)
   return activeBuffers
 endfunction
 
+function! s:BufferModified(bufNum)
+  return getbufvar(a:bufNum, "&modified")
+endfunction
+
 function! s:EchoBuffer(bufNum)
   let name = bufname(a:bufNum)
-  echom a:bufNum . ". " . (name != '' ? name : '[No Name]')
+  let status = s:BufferModified(a:bufNum) ? "+" : " "
+  echom a:bufNum . ". " . status . " " . (name != '' ? name : '[No Name]')
 endfunction
 
 function! s:EchoBuffers(pattern)
