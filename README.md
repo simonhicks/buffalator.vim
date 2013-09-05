@@ -15,5 +15,7 @@ input. Options are:
   exactly as you wrote it, and then print the new list of buffers.
 
 There is only one command (:Buffalate) and it either takes no arguments, or it
-takes a regex to use as a filter for the list.
+takes a regex to use as a filter for the list. Basically it's just a way to see
+which buffer numbers correspond to which file names while you execute a series
+of vim commands.
 
